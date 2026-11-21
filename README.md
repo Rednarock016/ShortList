@@ -6,8 +6,8 @@
 [![SQLite](https://img.shields.io/badge/Database-SQLite3-003B57.svg?style=flat&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> **"Read 200 resumes in the time it takes to read one."**  
-> An intelligent, full-stack recruitment platform that automatically parses candidate resumes, matches them against job descriptions using Groq-accelerated LLMs, and ranks applicants with detailed scores and actionable feedback.
+ **"Read 200 resumes in the time it takes to read one."**  
+ An intelligent, full-stack recruitment platform that automatically parses candidate resumes, matches them against job descriptions using Groq-accelerated LLMs, and ranks applicants with detailed scores and actionable feedback.
 
 ---
 
@@ -176,7 +176,7 @@ Open your browser and navigate to:
 http://localhost:8000
 ```
 
-> **Interactive API Docs**: Explore the Swagger UI directly at `http://localhost:8000/docs`
+ **Interactive API Docs**: Explore the Swagger UI directly at `http://localhost:8000/docs`
 
 ---
 
