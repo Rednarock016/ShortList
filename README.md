@@ -28,26 +28,41 @@
 ```mermaid
 flowchart TD
     subgraph Frontend["Frontend (Vanilla JS + CSS)"]
-        A[Candidate Portal] -->|Upload Resume PDF/DOCX| API
-        B[Recruiter Dashboard] -->|Create Roles & Trigger Ranking| API
-        C[Admin Console] -->|Manage Users & Roles| API
+        A["Candidate Portal"]
+        B["Recruiter Dashboard"]
+        C["Admin Console"]
     end
 
     subgraph Backend["FastAPI Backend"]
-        API[REST API Router]
-        AUTH[JWT & Bcrypt Security]
-        PARSE[Text Extractor: pypdf & python-docx]
-        DB[(SQLite3 Database)]
+        API["REST API Router"]
+        AUTH["JWT & Bcrypt Security"]
+        PARSE["Text Extractor: pypdf & python-docx"]
+        DB[("SQLite3 Database")]
     end
 
     subgraph ScoringEngine["Scoring & Evaluation Engine"]
-        API --> PARSE
-        PARSE --> GROQ{Groq API Key Configured?}
-        GROQ -->|Yes| LLM[Groq Cloud LLM Inference]
-        GROQ -->|No / Rate Limit| TFIDF[Scikit-learn TF-IDF Cosine Similarity]
-        LLM -->|Match Score, Summary, Skills| DB
-        TFIDF -->|Similarity Score Fallback| DB
+        GROQ{"Groq API Key Configured?"}
+        LLM["Groq Cloud LLM Inference"]
+        TFIDF["Scikit-learn TF-IDF Cosine Similarity"]
     end
+
+    %% Client Interactions
+    A -->|"Upload Resume (PDF/DOCX)"| API
+    B -->|"Create Roles & Trigger Ranking"| API
+    C -->|"Manage Users & Roles"| API
+
+    %% Backend Processing
+    API --> AUTH
+    API --> PARSE
+
+    %% Scoring Logic
+    PARSE --> GROQ
+    GROQ -->|"Yes"| LLM
+    GROQ -->|"No / Rate Limit"| TFIDF
+
+    %% Database Persistence
+    LLM -->|"Match Score, Summary, Skills"| DB
+    TFIDF -->|"Similarity Score Fallback"| DB
 ```
 
 ---
