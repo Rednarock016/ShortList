@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShortList</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app"></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+
+
+    <div class="auth">
+        <section class="auth-hero">
+            <h2 style="font-size: 20px;">Shortlist</h2>
+            <div>
+                <h1>Read 200 resumes in the time it takes to read one.</h1>
+                <p>Post a role, collect applicatios, and get candidates ranked againt the job description with the reasons attached. </p>
+            </div>
+            <div class="ladder" aria-hidden="true">
+                <div><span>1</span><i><b style="width:94%"></b></i><span>94</span></div>
+                <div><span>1</span><i><b style="width:81%"></b></i><span>81</span></div>
+                <div><span>1</span><i><b style="width:67%"></b></i><span>67</span></div>
+            </div>
+        </section>
+        <section class="auth-form">
+            <form id="authFrom">
+                <div class="tabs" role="tablist">
+                    <button type="button" class="tab" role="tab" data-mode="login" aria-selected="$(!reg)">Sign in</button>
+                    <button type="button" class="tab" role="tab" data-mode="register" aria-selected="$(reg)">Create account</button>
+                </div>
+                ${reg ? '<label>Full name<input name="Name" required minlength="2" autocomplete="Name"></label>' : ""}
+                <label>Email<input name="email" type="email" required autocomplete="email"></label>
+                <label>Password<input name="password" type="password" required minlength="${reg ? 8 : 1}" autocomplete="${reg ? 'new-password': 'current-password'}"></label>
+                ${reg ? '<label>I am a<select name="role"><option value="candidate">Candidate applying for jobs</option><option value="recruiter">Recruiter hiring for roles</option></select></label>' : ""}
+                <button class="btn" type="submit">${reg ? "Create account" : "Sign in"</button>
+                ${reg ? '<p class="muted small">use at least 8 character for your password</p>' : ""}
+            </form>
+        </section>
+    </div>;
+</body>
+</html>

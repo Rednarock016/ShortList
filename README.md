@@ -1,4 +1,4 @@
-# 📄 ShortList — AI-Powered Resume Ranker & Screening System
+# ShortList — AI-Powered Resume Ranker & Screening System
 
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688.svg?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org/)
@@ -11,19 +11,19 @@
 
 ---
 
-## 🌟 Highlights
+## Highlights
 
-- ⚡ **Ultra-Fast AI Scoring**: Integrates Groq LLM inference (`openai/gpt-oss-120b` or custom models) for near-instant structured candidate evaluation.
-- 🔄 **Smart Offline Fallback**: Zero downtime — seamlessly falls back to local Scikit-Learn TF-IDF cosine similarity ranking if AI API limits are hit or credentials are absent.
-- 🎯 **Objective & Unbiased Criteria**: Evaluates purely on skills, domain fit, and relevant experience while explicitly ignoring protected demographic attributes.
-- 🛡️ **Prompt Injection Resistant**: Hardened prompt boundaries treat untrusted resume documents as plain data to prevent jailbreak attempts.
-- 👥 **Multi-Role RBAC**: Distinct workflows for **Candidates**, **Recruiters**, and **Admins** powered by secure JWT Bearer tokens and bcrypt password hashing.
-- 📂 **Multi-Format Parsing**: Instant text extraction for `.pdf` (pypdf), `.docx` (python-docx), and `.txt` files up to 5MB.
-- 💻 **Zero-Build Lightweight UI**: Elegant, responsive SPA built with modern Vanilla JavaScript and CSS — no npm or heavy bundle pipelines required.
+- **Ultra-Fast AI Scoring**: Integrates Groq LLM inference (`openai/gpt-oss-120b` or custom models) for near-instant structured candidate evaluation.
+- **Smart Offline Fallback**: Zero downtime — seamlessly falls back to local Scikit-Learn TF-IDF cosine similarity ranking if AI API limits are hit or credentials are absent.
+- **Objective & Unbiased Criteria**: Evaluates purely on skills, domain fit, and relevant experience while explicitly ignoring protected demographic attributes.
+- **Prompt Injection Resistant**: Hardened prompt boundaries treat untrusted resume documents as plain data to prevent jailbreak attempts.
+- **Multi-Role RBAC**: Distinct workflows for **Candidates**, **Recruiters**, and **Admins** powered by secure JWT Bearer tokens and bcrypt password hashing.
+- **Multi-Format Parsing**: Instant text extraction for `.pdf` (pypdf), `.docx` (python-docx), and `.txt` files up to 5MB.
+- **Zero-Build Lightweight UI**: Elegant, responsive SPA built with modern Vanilla JavaScript and CSS — no npm or heavy bundle pipelines required.
 
 ---
 
-## 🏗️ Architecture & Workflow
+## Architecture & Workflow
 
 ```mermaid
 flowchart TD
@@ -52,7 +52,7 @@ flowchart TD
 
 ---
 
-## 👥 User Roles & Features
+## User Roles & Features
 
 | Role | Key Capabilities |
 | :--- | :--- |
@@ -62,7 +62,7 @@ flowchart TD
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Backend Framework**: [FastAPI](https://fastapi.tiangolo.com/) (Python 3.10+)
 - **Server**: [Uvicorn](https://www.uvicorn.org/) ASGI
@@ -75,7 +75,7 @@ flowchart TD
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 Resume-Ranker/
@@ -93,7 +93,7 @@ Resume-Ranker/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Prerequisites
 
@@ -165,23 +165,23 @@ http://localhost:8000
 
 ---
 
-## 📡 API Endpoints
+## API Endpoints
 
-### 🔐 Authentication
+### Authentication
 | Method | Endpoint | Description | Access |
 |---|---|---|---|
 | `POST` | `/api/auth/register` | Register a new recruiter or candidate | Public |
 | `POST` | `/api/auth/login` | Sign in with email and password | Public |
 | `GET` | `/api/auth/me` | Fetch currently authenticated user | Authenticated |
 
-### 💼 Jobs
+### Jobs
 | Method | Endpoint | Description | Access |
 |---|---|---|---|
 | `GET` | `/api/jobs` | List available jobs / recruiter posted jobs | Authenticated |
 | `POST` | `/api/jobs` | Create a new job requisition | Recruiter, Admin |
 | `DELETE` | `/api/jobs/{id}` | Delete a job requisition | Recruiter (Owner), Admin |
 
-### 📝 Applications & Ranking
+### Applications & Ranking
 | Method | Endpoint | Description | Access |
 |---|---|---|---|
 | `POST` | `/api/jobs/{id}/apply` | Submit resume (`.pdf`, `.docx`, `.txt`) | Candidate |
@@ -189,7 +189,7 @@ http://localhost:8000
 | `GET` | `/api/jobs/{id}/applications` | View candidate ranking & scores for a job | Recruiter, Admin |
 | `POST` | `/api/jobs/{id}/rank` | Trigger AI / TF-IDF scoring for applicants | Recruiter, Admin |
 
-### 🛡️ Administration
+### Administration
 | Method | Endpoint | Description | Access |
 |---|---|---|---|
 | `GET` | `/api/admin/users` | List all registered users | Admin |
@@ -197,7 +197,7 @@ http://localhost:8000
 
 ---
 
-## 🤖 How the Ranking Algorithm Works
+## How the Ranking Algorithm Works
 
 1. **Text Extraction**: The document is uploaded and read in memory. Text is normalized and checked for minimum content length (protects against empty or purely scanned documents).
 2. **AI Semantic Scoring (Primary)**:
@@ -213,7 +213,7 @@ http://localhost:8000
 
 ---
 
-## 🛡️ Security & Privacy
+## Security & Privacy
 
 - **Data Privacy**: Resumes are converted to text and stored locally in your SQLite database. No external tracking or storage outside your Groq API calls.
 - **Fair Screening**: The system prompt explicitly enforces non-discriminatory evaluations, strictly ignoring protected attributes (gender, age, ethnicity, nationality).
@@ -222,7 +222,7 @@ http://localhost:8000
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -234,8 +234,9 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
-## 📄 License
+## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
-#   S h o r t L i s t  
+#   S h o r t L i s t 
+ 
  
