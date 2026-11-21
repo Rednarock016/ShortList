@@ -1,0 +1,12 @@
+# Auto-detect text files and normalize line endings
+* text=auto eol=lf
+
+# Explicitly ensure markdown, source code, and configs are treated as text with LF
+*.md text eol=lf
+*.py text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.json text eol=lf
+*.txt text eol=lf
+.gitignore text eol=lf
